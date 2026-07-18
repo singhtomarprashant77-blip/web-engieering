@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7");
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+}
+
+.box{
+width:330px;
+padding:30px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+border-radius:20px;
+text-align:center;
+}
+
+input,button{
+width:90%;
+padding:12px;
+margin:10px;
+border-radius:10px;
+border:none;
+}
+
+button{
+background:#00e5ff;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Register</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="register()">Register</button>
+
+<p><a href="login.html">Login</a></p>
+
+</div>
+
+<script>
+function register(){
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+
+    alert("Registered Successfully!");
+    window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>
